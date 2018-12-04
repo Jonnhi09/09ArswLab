@@ -16,7 +16,5 @@ public interface StringsService {
 
     public void addString(String contenido);
 
-    public Cadena getString();
-
     public List<Cadena> getStrings();
 }

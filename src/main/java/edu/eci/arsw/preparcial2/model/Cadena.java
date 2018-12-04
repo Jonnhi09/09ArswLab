@@ -17,22 +17,20 @@ public class Cadena {
     @Id
     public String id;
 
-    private String contenido;
     private String fecha;
+    private String contenido;
 
     public Cadena() {
     }
 
-    
-    
     public Cadena(String contenido) {
-        this.contenido = contenido;
         this.fecha = new Date().toString();
+        this.contenido = contenido;
     }
 
     public Cadena(String contenido, String fecha) {
-        this.contenido = contenido;
         this.fecha = fecha;
+        this.contenido = contenido;
     }
 
     public String getContenido() {

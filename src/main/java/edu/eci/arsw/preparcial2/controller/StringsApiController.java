@@ -5,18 +5,11 @@
  */
 package edu.eci.arsw.preparcial2.controller;
 
-import com.google.gson.Gson;
-import edu.eci.arsw.preparcial2.model.Cadena;
 import edu.eci.arsw.preparcial2.service.StringsService;
-import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,10 +36,10 @@ public class StringsApiController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> manejadorPostRecursoAgregarPlano(@RequestBody String contenido) {
+    public ResponseEntity<?> setStrings(@RequestBody String contenido) {
         try {
             //registrar contenido
-            //curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://localhost:8080/strings -d '{"contenido":"Test"}'
+            //curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://localhost:8080/strings -d 'anything'
             ss.addString(contenido);
             return new ResponseEntity<>(HttpStatus.CREATED);
         } catch (Exception ex) {

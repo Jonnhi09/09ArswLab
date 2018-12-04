@@ -8,8 +8,9 @@ package edu.eci.arsw.preparcial2.service;
 import java.util.List;
 import edu.eci.arsw.preparcial2.model.Cadena;
 import edu.eci.arsw.preparcial2.persistance.StringsRepository;
-import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 /**
@@ -28,12 +29,7 @@ public class StringsServicesImpl implements StringsService {
     }
 
     @Override
-    public Cadena getString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<Cadena> getStrings() {
-        return repositorio.findAll();
+        return repositorio.findAll(new Sort(Direction.DESC, "fecha"));
     }
 }
